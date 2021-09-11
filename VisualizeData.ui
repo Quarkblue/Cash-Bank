@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>204</width>
+    <height>292</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="datTable">
+   <property name="geometry">
+    <rect>
+     <x>-5</x>
+     <y>0</y>
+     <width>231</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <row>
+    <property name="text">
+     <string>Date</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Spent</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Gained</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Saved today</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Withdrawed</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Total savings</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Total</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Total left to spend</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Total spent</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>Value</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
