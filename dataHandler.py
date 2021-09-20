@@ -8,84 +8,62 @@ class DataHandler():
         
         self.file_path = 'data\\dhan-rashi.json'
         self.fSize = os.path.getsize(self.file_path)
+        self.first_time = False
         
-    def getTheData(self):
-        
-        first_time = False
     
+    
+    def saveUserData(self, user, jsData):
+        with open(self.file_path, 'r+') as jsFileObj:
+            data = json.load(jsFileObj)
+            last_entry_from_input = list(data.keys())[-1]
+            last_entry_from_data = list(jsData.keys())[-1]
+            entry_no_input = int(last_entry_from_input[6:])
+            entry_no_data = 0
+            
+            if last_entry_from_data == 'basics':
+                if entry_no_input == 1:
+                    jsFileObj.seek(0,0)
+                    json.dump(jsData, jsFileObj)
+                    
+            elif 'entry_' in last_entry_from_data:
+                if entry_no_data < entry_no_input:
+                    jsFileObj.seek(0,0)
+                    json.dump(jsData, jsFileObj)
+                    
+                    
+                    
+    def checkIfBasicInput(self):
         with open(self.file_path, 'r+') as jsFile:
+            jsData = json.load(jsFile)
             
             if self.fSize == 0 or self.fSize == 2:
+                self.first_time = True
                 
-                first_time = True
-                
-            if first_time == True:
-                
-                total = 0
-                monthly_savings = 0
-                daily_savings = 0
-                while True:
+            if self.first_time:
+                return (True,)
             
-                    total = int(input("Enter total money you have/had in the starting:> "))
+            elif not self.first_time:
                 
-                    w_save = input("Do you want to save monthly?[Y/N] :> ")
-                    
-                    if w_save.lower() == 'y':
-                        
-                        monthly_savings = int(input("Enter how much do you want to save monthly[0 for none]:> "))
-
-                    elif w_save.lower() == 'n':
-
-                        daily_savings = int(input("Enter how much you want so save daily[0 for none]:> "))
-                        
-                    jsInput_data = {"basics":{
-                                            "total": total,
-                                            "monthly_savings": monthly_savings,
-                                            "daily_savings": daily_savings
-                                            }
-                                    }
-                        
-                    json.dump(jsInput_data, jsFile)
-                    jsFile.close()
-                    break
-                        
-            with open(self.file_path, 'r') as jsFile:
-                
-                data = json.load(jsFile)
-                    
-                key = list(data.keys())[-1]
-                
-                total = data['basics']['total']
-                monthly_savings = data['basics']['monthly_savings']
-                daily_savings = data['basics']['daily_savings']
+                return (False, jsData)
+            
+            
+    # def save_daily_input(self, data, jsData, user):
         
-                add_savings = 0
-                withd_savings = 0
+    #     with open(self.file_path, 'r') as jsFile:
+            
+    #         jsData = json.loads(jsFile.read())
+    #         keys = list(jsData.keys())
+    #         if jsData != {}:
+    #             last_key = list(jsData[user].keys())[-1]
+    #             if last_key == 'basics':
+    #                 return True
                 
-                total_left = int(input("Enter how much money you have right now:> "))
+    #             elif 'entry_' in last_key:
+    #                 return False
                 
-                sOrw = input("Do you want to ADD[A] to savings or WITHDRAW[W]:> ")
-                                
-                if sOrw.lower() == 'a':
-
-                    add_savings = int(input("Enter how much money to your savings:> "))
-                    
-                if sOrw.lower() == 'w':
-                        
-                    if key == 'basics' or data[key]['savings_total'] == 0:
-                
-                        print('You cannot withdraw...')
-                        print('because you dont have (lol?)')
-                        
-                    else:
-                    
-                        withd_savings = int(input("Enter how much you want to remove from your savings:> "))
-                        
-                        if withd_savings > data[key]['total_savings']:
-                            
-                            withd_savings = 0
-                            print("How can you withdraw more than you have?")
-                            
-        today = date.today()
         
-        return {'today': today, 'total': total, 'total_left': total_left, 'add_savings': add_savings, 'withd_savings': withd_savings}
+
+    
+        
+        
+        

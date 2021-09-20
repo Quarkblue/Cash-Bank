@@ -5,7 +5,7 @@
 		}
 	],
 	"settings": {
-		"python.pythonPath": "C:\\Users\\DELL\\.virtualenvs\\CashBank\\Scripts\\python.exe",
-		"qtForPython.rcc.path": "c:\\Users\\DELL\\OneDrive\\Desktop\\python codes\\Cash Bank\\.qt_for_python\\rcc\\test.qrc"
+		"python.defaultInterpreterPath": "E:\\virtualenv\\CashBank\\Scripts\\python.exe",
+		
 	}
 }
