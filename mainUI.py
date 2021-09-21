@@ -26,6 +26,9 @@ class Ui_MainWindow(object):
         self.username = user
         self.DataHandler = DataHandler()
         
+    #-----------------------------------------------------------------------------------------------
+    # custom functions Start
+
     def save_data(self, jsData):
         with open(self.file_path, 'r+') as jsFileObj:
             data = json.load(jsFileObj)
@@ -303,6 +306,14 @@ class Ui_MainWindow(object):
                 self.uiVD = Ui_Form()
                 self.uiVD.setupUi(self.form, data)
                 self.form.show()
+                
+                
+    # custom functions End
+    #-----------------------------------------------------------------------------------------------
+    
+    
+    # SETUP
+    
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
