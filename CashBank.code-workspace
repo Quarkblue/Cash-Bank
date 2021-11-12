@@ -5,7 +5,7 @@
 		}
 	],
 	"settings": {
-		"python.defaultInterpreterPath": "E:\\virtualenv\\CashBank\\Scripts\\python.exe",
+		"python.defaultInterpreterPath": "D:\\virtualenv\\CashBank\\Scripts\\python.exe",
 		
 	}
 }
