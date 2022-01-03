@@ -19,9 +19,7 @@ qt6-applications==6.1.0.2.2
 qt6-tools==6.1.0.1.2
 requests==2.25.1
 urllib3==1.26.5
-## The following requirements were added by pip freeze:
 Werkzeug==2.0.2
-(CashBank) PS D:\python codes\CashBank> pip freeze
 certifi==2021.5.30
 chardet==4.0.0
 click==7.1.2
