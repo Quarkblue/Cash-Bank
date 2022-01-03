@@ -8,7 +8,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
-from mainUI import Ui_MainWindow
+from mainUIupdated import Ui_MainWindow
 from userDataHandler import UserDataHandler
 import sys
 from functools import partial

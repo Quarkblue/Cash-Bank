@@ -13,9 +13,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form, data):
         Form.setObjectName("Form")
-        Form.resize(204, 292)
+        Form.resize(204, 322)
         self.datTable = QtWidgets.QTableWidget(Form)
-        self.datTable.setGeometry(QtCore.QRect(-5, 0, 231, 301))
+        self.datTable.setGeometry(QtCore.QRect(0, 0, 204, 323))
         self.datTable.setEditTriggers(QtWidgets.QAbstractItemView.EditTrigger.NoEditTriggers)
         self.datTable.setObjectName("datTable")
         self.datTable.setColumnCount(1)
@@ -41,6 +41,7 @@ class Ui_Form(object):
         item = QtWidgets.QTableWidgetItem()
         self.datTable.setVerticalHeaderItem(9, item)
         item = QtWidgets.QTableWidgetItem()
+        
         self.datTable.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.datTable.setItem(0, 0, item)
@@ -62,6 +63,9 @@ class Ui_Form(object):
         self.datTable.setItem(8, 0, item)
         item = QtWidgets.QTableWidgetItem()
         self.datTable.setItem(9, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.datTable.setItem(9, 0, item)
+        
 
         self.retranslateUi(Form, data)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -87,6 +91,8 @@ class Ui_Form(object):
         item.setText(_translate("Form", "Total left to spend"))
         item = self.datTable.verticalHeaderItem(8)
         item.setText(_translate("Form", "Total spent"))
+        item = self.datTable.verticalHeaderItem(9)
+        item.setText(_translate("Form", "Description"))
         item = self.datTable.horizontalHeaderItem(0)
         item.setText(_translate("Form", "Value"))
         __sortingEnabled = self.datTable.isSortingEnabled()
@@ -109,6 +115,8 @@ class Ui_Form(object):
         item.setText(_translate("Form", str(data['total_left_to_spend'])))
         item = self.datTable.item(8, 0)
         item.setText(_translate("Form", str(data['total_spent'])))
+        item = self.datTable.item(9, 0)
+        item.setText(_translate("Form", str(data['description'])))
         self.datTable.setSortingEnabled(__sortingEnabled)
         
 

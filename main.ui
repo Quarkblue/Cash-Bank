@@ -36,7 +36,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -63,7 +63,7 @@ border-color: rgb(0, 18, 25);
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -91,7 +91,7 @@ border-color: rgb(0, 18, 25);
          <string>Save?</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="saveButton_2">
+       <widget class="QPushButton" name="RemoveButton">
         <property name="geometry">
          <rect>
           <x>300</x>
